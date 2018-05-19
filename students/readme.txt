@@ -1,4 +1,13 @@
 ﻿Họ tên: Trần Thuận Nghĩa
 Ngày sinh: 22/08/1991
-Họ tên : Huỳnh Tấn Dũng 
-Ngày sinh: 30/04/1997
+
+git clone
+git add .
+git commit -m "message"
+git pull
+git push
+git status
+*************
+switch nhanh'
+git fetch
+git checkout <te^n nhanh'>
