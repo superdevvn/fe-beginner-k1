@@ -1,0 +1,25 @@
+.new-div{
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+
+  
+    
+}
+.hover{
+    color: gray
+}
+
+.red{
+
+    background-color: red;
+}
+.yellow{
+
+    background-color: yellowgreen;
+}
+
+.blue{
+
+    background-color: blue;
+}
