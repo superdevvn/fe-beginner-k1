@@ -1,0 +1,25 @@
+div:hover{
+    background-color: burlywood!important;
+}
+.new-div{
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+}
+.red {
+    background-color: red
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+
+
+.blue{
+    background-color: blue
+}
