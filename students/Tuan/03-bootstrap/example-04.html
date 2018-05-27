@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table Bootstrap</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="css/js" href="javascript.js">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-hover table-striped">
+            <!-- định kích thước từng cột -->
+            <colgroup>
+                <col style="width: 50px">
+                <col style="width: 500px">
+                <col style="width: 500px">
+                <col style="width: 500px">
+            </colgroup> 
+            <thead class="thead-dark">
+                <tr>
+                    <th>STT</th>
+                    <!-- d-sm-none d-md-table-cell khi tới màn hình kích thước sm thì first name sẽ không hiện
+                     -->
+                    <th class="d-sm-none d-md-table-cell">First Name</th>
+                    <th>Last Name</th>
+                    <th>Option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-success">
+                    <td scope="row">1</td>
+                    <td class="d-sm-none d-md-table-cell">Tuấn</td>
+                    <td>Trần</td>
+                    <td>
+                        <button class="btn btn-success">
+                            <i class="fa fa-floppy-o fa-fw"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-pencil fa-fw"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td class="d-sm-none d-md-table-cell">John</td>
+                    <td>Jeny</td>
+                    <td>
+                        <button class="btn btn-success">
+                            <i class="fa fa-floppy-o fa-fw"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-pencil fa-fw"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td scope="row">3</td>
+                    <td  class="d-sm-none d-md-table-cell text-center">
+                        <input type="checkbox">
+                    </td>
+                    <td >
+                        <select class="form-control">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn btn-success">
+                            <i class="fa fa-floppy-o fa-fw"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fa fa-pencil fa-fw"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
