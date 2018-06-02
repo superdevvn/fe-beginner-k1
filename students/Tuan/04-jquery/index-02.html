@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="row m-4">
+        <div class="col-md-4">
+            <input type="text" id="ipt1" class="form-coltrol form-coltrol-sm">
+            <button id="btn1" class="btn btn-primary">Btn 1</button>
+        </div>
+        <div class="col-md-4">
+            <input type="text" id="ipt2" class="form-coltrol form-coltrol-sm">
+            <button id="btn2" class="btn btn-warning">Btn 2</button>
+        </div>
+        <div class="col-md-4">
+            <label class="text-primary">Primary 1</label>
+            <label class="text-warning">Warning 1</label>
+            <label class="text-danger">Danger 1</label>
+            <label class="text-primary">Primary 2</label>
+            <label class="text-warning">Warning 2</label>
+            <label class="text-danger">Danger 2</label>
+        </div>
+    </div>
+
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $('#btn1').click(function () {
+        var value = $('#ipt1').val();
+        alert(value);
+    });
+
+    $('#ipt1').keyup(function () {
+        //Lấy value của input 1
+        var value = $('#ipt1').val();
+        //gán giá trị  value cho input 2
+        $('#ipt2').val(value);
+    });
+
+    $('#btn2').click(function () {
+        //Lấy giá trị cua input1
+        var value = $('#ipt1').val();
+        //Gán giá trị value cho label có class là text-primary
+        //$('.text-primary').text(value);
+        //Nếu dùng $('#lbl1') thì nó sẽ ưu tiên thằng đầu tiên chứ k thay đổi hết đk cả 2 thằng
+        //$('#lbl1').text(value);
+        //Gán giá trị value cho toàn lable
+        $('label').text(value);
+    });
+</script>
+
+</html>
