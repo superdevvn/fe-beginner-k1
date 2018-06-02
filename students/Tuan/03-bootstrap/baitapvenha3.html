@@ -1,0 +1,408 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tooltip Bootstrap</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+</head>
+<style>
+    .btn.btn-danger.btn-sm.mr-3 {
+        border-radius: 20px;
+        width: 70px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
+    .icon a {
+        margin-left: 10px
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Chuyển bài tiếp theo
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Chuyển bài tiếp theo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Bạn muốn chuyển bài nào?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-primary" href="file:///C:/Users/cus/Documents/fe-beginner-k1/students/Tuan/03-bootstrap/baitapvenha1.html">Bài 1 nè</a>
+                                <a class="btn btn-success" href="file:///C:/Users/cus/Documents/fe-beginner-k1/students/Tuan/03-bootstrap/baitapvenha2.html">Bài 2 nè</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <button class="btn btn-danger btn-sm mr-3">New</button>
+            </div>
+        </div>
+        <table class="table table-hover table-striped table-dark table-responsive">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>STORERKEY
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>SKU
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Name
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>PACKKEY
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>STDGOSSWGT
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>STDNETWGT
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>STDCUBE
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>STRATEGYKEY
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>PUTAWAYZONE
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>PUTAWAYSTRATEGYKEY
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>PRIORITY UOM
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>RotateField
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Rotatelly
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Group of Cago
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>ZonePickCase
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Unit of issue
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Unit of Measure
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                    <th>Batch indicator
+                        <br>
+                        <input type="text" class="form-control">
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>Owner1</td>
+                    <td>439506</td>
+                    <td>SKU Test 1</td>
+                    <td>8PC/12CT</td>
+                    <td>0.5</td>
+                    <td>0.4</td>
+                    <td>0.1</td>
+                    <td>TESTALLO</td>
+                    <td>ZONE2</td>
+                    <td>test</td>
+                    <td>
+                        <label class="form-control bg bg-success text-white">Active</label>
+                    </td>
+                    <td>LOTTABLE04</td>
+                    <td>FEFO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>0</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 icon">
+                <a class="bg bg-primary text-white" href="#">
+                    <i class="fas fa-share-alt"></i>
+                </a>
+                <a class="bg bg-success text-white" href="#">
+                    <i class="fas fa-upload"></i>
+                </a>
+                <a class="bg bg-success text-white" href="#">
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+            <div class="col-lg-6 col-sm-12 text-right">
+                <span>
+                    <input style="width: 50px;" type="number"> /425
+                    <ul style="float:right" class="pagination ml-3">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</html>
