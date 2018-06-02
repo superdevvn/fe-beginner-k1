@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tooltip Bootstrap</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+</head>
+<style>
+    label {
+        background-color: chocolate;
+        border: solid 1px red;
+        border-radius: 20px;
+        width: 100px;
+        text-align: center;
+        margin: 10px 0px;
+        color: yellow
+    }
+
+    input:hover {
+        background-color: lightcoral;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form>
+            <h1>NEW USER</h1>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="">FirstName</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Your FistName">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>LastName</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Your LastName">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Sex:</label>
+                    <br>
+                    <input type="radio">
+                    <span>Man</span>
+                    <input class="ml-4" type="radio">
+                    <span>Woman</span>
+                    <input class="ml-4" type="radio">
+                    <span>Other</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>UserName</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Your UserName">
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="password" placeholder="Your Password">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Role:</label>
+                    <br>
+                    <select class="form-control">
+                        <option value="Admin">Admin</option>
+                        <option value="Member">Member</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="Email" placeholder="Your Email">
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Your Phone">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label>Address</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-location-arrow"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Your address">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Description</label>
+                    <input type="text" class="form-control" style="height: 100px;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit" class="mt-2 btn btn-success" style="width: 100px">Save</button>
+                    <button type="submit" class="mt-2 btn btn-danger" style="width: 100px">Back</button>
+                </div>
+                <div class="col-sm-6" style="text-align: right">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Chuyển bài tiếp theo
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Chuyển bài tiếp theo</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Bạn muốn chuyển bài nào?</p>
+                                </div>
+                                <div class="modal-footer">
+                                        <a class="btn btn-primary" href="file:///C:/Users/cus/Documents/fe-beginner-k1/students/Tuan/03-bootstrap/baitapvenha2.html">Bài 2 nè</a>
+                                        <a class="btn btn-success" href="file:///C:/Users/cus/Documents/fe-beginner-k1/students/Tuan/03-bootstrap/baitapvenha3.html">Bài 3 nè</a>  
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</html>
