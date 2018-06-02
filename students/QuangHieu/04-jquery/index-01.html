@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" class="btn btn-primary" onclick="clickBtn1()">  Btn 1   </button>
+    <button id="btn2" class="btn btn-warning"> Btn 2  </button>
+</body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+
+        // let a = function () {
+        //     alert('Btn2 Clicked');
+        // };
+    
+        function clickBtn1() {
+            alert('Btn1 Clicked');
+    
+            // document.getElementById('btn2').removeEventListener('click', a);
+            // a = function () {
+            //     alert('Btn2 Clicked');
+            // };
+            // document.getElementById('btn2').addEventListener('click', a);
+    
+            //Jquery
+    
+            // $('#btn2').on('click', function () {
+            //     alert('Btn2 clicked');
+            // });
+            $('#btn2').off('click');
+            $('#btn2').click(function () {
+                alert('Btn2 clicked');
+            });
+        }
+    </script>
+</html>
