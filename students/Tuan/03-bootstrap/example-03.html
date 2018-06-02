@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thuốc tính col</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
@@ -14,38 +14,40 @@
     <div class="container">
         <!-- offset là mỗi bên khi thu nhỏ vô thì sẽ đẩy vào 3 cột cho cái hình nằm giữa
         mt-số là margin top, pt-số là padding top, tương tự cho ml,mr,mb,pr,pl,pb -->
-        <div class="offset-md-3 col-md-6 mt-4 row" style="border: rebeccapurple 1px solid">
-            <div class="col-md-3 mt-3">
-
-                Username
+        <div class="offset-md-3 col-md-6 mt-5 text-center" style="border:2px solid red ">
+            <h1>Login</h1>
+            <hr>
+            <div class="col-md-12 mt-3 ">
+                <h5>Tên đăng nhập</h5>
             </div>
-            <div class="col-md-9 mt-3">
-                <div class="input-group">
+            <div class="col-md-12 mt-3 ">
+                <div class="input-group ">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
+                        <span class="input-group-text">
                             <i class="fa fa-user"></i>
                         </span>
+
                     </div>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="UserName">
                 </div>
             </div>
-            <div class="col-md-3 mt-3">
-                Password
+            <div class="col-md-12 mt-3 ">
+                <h5>Mật Khẩu</h5>
             </div>
-            <div class="col-md-9 mt-3">
-                <div class="input-group">
+            <div class="col-md-12 mt-3 ">
+                <div class="input-group ">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
+                        <span class="input-group-text">
                             <i class="fa fa-lock"></i>
                         </span>
+
                     </div>
                     <input type="password" class="form-control" placeholder="Password">
                 </div>
             </div>
-            <div class="col-md-12 text-right mt-3 mb-3">
-                <button class="btn btn-outline-success">Login</button>
+            <div class="col-md-12 mt-3 mb-3">
+                <button class="btn btn-outline-warning">Login</button>
             </div>
-
         </div>
     </div>
 </body>
