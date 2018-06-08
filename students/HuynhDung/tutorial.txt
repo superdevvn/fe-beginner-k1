@@ -1,0 +1,5 @@
+cmd > 
+npm i init
+cmd > 
+npm install bootstrap jquery jquery-ui font-awesome
+npm install jqueryui

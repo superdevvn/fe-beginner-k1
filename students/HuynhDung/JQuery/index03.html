@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div >
+                <input id="Input1">
+                <select id="Select1">
+                    <option value="1">dev1</option>
+                    <option value="2">dev2</option>
+                    <option value="3">dev3</option>
+                </select>
+                <button id="Button1">Button 1</button>           
+        </div>
+        <div id="div2" >
+      
+                    <label>Label 1</label>
+                    <label>Label 2</label>`
+                    <label>Label 3</label>
+                    <label>Label 4</label>
+                    <label>Label 5</label>
+                    <label>Label 5</label>
+                    <button id="Button2">Button 2</button>
+          
+                          
+        </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    //c1
+$('#Button2').click(function(){   
+    var value = $('#Select1 option:selected').text();
+   // alert(value);
+    //khong phan cap
+    //$('#div2 label:nth-child(3)').text(value);
+    //lay cap ke tiep > cap 1  : >> cap 2 : >>> cap 3  
+    $('#div2>label:nth-child(3)').text(value);
+    //su dung thuoc tinh css
+})
+
+</script>
+</html>
