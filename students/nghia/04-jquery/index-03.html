@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<style>
+</style>
+
+<body>
+    <div class="row m-4">
+        <div id="div1" class="col-md-4">
+            <select id="slt1" class="form-control form-control-sm">
+                <option value="1">Super</option>
+                <option value="2">Dev</option>
+                <option value="3">Peter</option>
+            </select>
+            <button id="btn1" class="btn btn-sm btn-primary">Btn 1</button>
+        </div>
+        <div id="div2" class="col-md-4">
+            <label>Label 1</label>
+            <label>Label 2</label>
+            <label>Label 3</label>
+            <label>Label 4</label>
+            <button id="btn2" class="btn btn-sm btn-info">Btn 2</button>
+            <button id="btn3" class="btn btn-sm btn-info">Btn 3</button>
+        </div>
+        <div class="col-md-4">
+            <button id="btn4" class="btn btn-sm">Btn 4</button>
+            <button id="btn5" class="btn btn-sm">Btn 5</button>
+            <button id="btn6" class="btn btn-sm">Btn 6</button>
+        </div>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $('#btn1').click(function () {
+        // Lấy value của option được chọn
+        alert($('#slt1').val());
+        // Lấy text của option được chọn
+        alert($('#slt1 option:selected').text());
+    });
+    $('#btn2').click(function () {
+        // Lấy text của option được chọn
+        var text = $('#slt1 option:selected').text();
+        // Gán text cho label thứ 3
+        $('#div2>label:nth-child(3)').text(text);
+        // Gán thuộc tính color cho label thứ 3
+        $('#div2>label:nth-child(3)').css('color', 'red');
+    });
+    $('#btn3').click(function () {
+        // Lấy giá trị thuộc tính color của label thứ 3
+        var color = $('#div2>label:nth-child(3)').css('color');
+        // Gán giá trị thuộc tính color cho label thứ 4
+        $('#div2>label:nth-child(4)').css('color', color);
+    });
+
+    $('#btn4').mouseenter(function () {
+        $('#btn4').addClass('btn-info');
+    });
+    $('#btn4').mouseleave(function () {
+        $('#btn4').removeClass('btn-info');
+    });
+    $('#btn4').click(function () {
+        // if($('#btn5').hasClass('btn-danger')) $('#btn5').removeClass('btn-danger');
+        // else $('#btn5').addClass('btn-danger');
+        $('#btn5').toggleClass('btn-danger');
+    });
+    $('#btn5').click(function () {
+        // if($('#btn5').hasClass('btn-danger')) $('#btn5').removeClass('btn-danger');
+        // else $('#btn5').addClass('btn-danger');
+        $('#btn6').toggle('fast'); //slow fast
+    });
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery 3</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="row m-4">
+        <div id="div1" class="col-md-4">
+            <select id="slt1" class="form-coltrol form-coltrol-sm">
+                <option value="1">Super</option>
+                <option value="2">Dev</option>
+                <option value="3">Tester</option>
+            </select>
+            <button id="btn1" class="btn btn-primary">Btn 1</button>
+        </div>
+        <div id="div2" class="col-md-4">
+            <label>Label 1</label>
+            <label>Label 2</label>
+            <label>Label 3</label>
+            <label>Label 4</label>
+            <button id="btn2" class="btn btn-sm btn-info">Btn 2</button>
+            <button id="btn3" class="btn btn-sm btn-info">Btn 3</button>
+        </div>
+        <div id="div2" class="col-md-4">
+
+            <button id="btn4" class="btn btn-sm btn-info">Btn 4</button>
+            <button id="btn5" class="btn btn-sm btn-info">Btn 5</button>
+            <button id="btn6" class="btn btn-sm btn-info">Btn 6</button>
+        </div>
+
+
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+
+    $('#btn1').click(function () {
+        //Lấy giá trị trong #slt1 ra từ các option
+        alert($('#slt1').val());
+        //Lấy text từ các option
+        alert($('#slt1 option:selected').text());
+        //var value=$('#slt1').text();
+    });
+    //Đề: thay label thứ 3 thành text của option mình chọn
+    //Cách 1:
+    $('#btn2').click(function () {
+        //alert($('label:nth-child(3)').text());
+        //Lấy giá trị text của option mình chọn
+        var value = $('#slt1 option:selected').text();
+        //Gán value cho label thứ 3, dùng dấu > để nó có thể vào thẳng label dù nó nằm trong mấy div đi nữa
+        $('#div2>label:nth-child(3)').text(value);
+        $('#div2>label:nth-child(3)').css("color", "blue");
+
+    });
+    //Cách 2:
+    // $('#btn2').click(function () {
+    //     //alert($('label:nth-child(3)').text());
+    //     //Lấy giá trị text của option mình chọn
+    //     var value = $('#slt1 option:selected').text();
+    //     //Gán value cho label thứ 3
+    //     $('#div2').find('label').eq(2).text(value);
+    // });
+    //Lấy mày của label thứ 3
+    $('#btn3').click(function () {
+        var color = $('#div2>label:nth-child(3)').css('color');
+        //gán màu cho label thứ 4
+        $('#div2>label:nth-child(4)').css('color', color);
+    });
+    //rê chuôt qua btn4 thì đổi màu
+    $('#btn4').mouseenter(function () {
+        $('#btn4').addClass('btn-info');
+    });
+    $('#btn4').mouseleave(function () {
+        $('#btn4').removeClass('btn-info');
+    });
+    //------------------------------------
+    //click btn4 thì sẽ đổi màu btn 5
+    $('#btn4').click(function () {
+        $('#btn5').toggleClass('btn-danger');
+    });
+    //click btn5 thì btn 6 biến mất có thể dùng slideToggle(2000)
+    $('#btn5').click(function () {
+        $('#btn6').toggle('slow');
+    });
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row m-4">
+        <div class="col-md-4">
+            <input id="ipt1" class="form-control form-control-sm">
+            <button id="btn1" class="btn btn-sm btn-primary">Btn 1</button>
+        </div>
+        <div class="col-md-4">
+            <input id="ipt2" class="form-control form-control-sm">
+            <button id="btn2" class="btn btn-sm btn-warning">Btn 2</button>
+        </div>
+        <div class="col-md-4">
+            <label class="text-primary">Primary 1</label>
+            <label class="text-warning">Warning 1</label>
+            <label class="text-danger">Danger 1</label>
+
+            <label class="text-primary">Primary 2</label>
+            <label class="text-warning">Warning 2</label>
+            <label class="text-danger">Danger 2</label>
+        </div>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    $('#btn1').click(function () {
+        // Lấy value của input 1
+        var value = $('#ipt1').val();
+        alert(value);
+    });
+    $('#ipt1').keyup(function () {
+        // Lấy value của input 1
+        var value = $('#ipt1').val();
+        // Gán giá trị value cho input 2
+        $('#ipt2').val(value);
+    });
+    $('#btn2').click(function(){
+        // Lấy value của input 1
+        var value = $('#ipt1').val();
+        // Gán giá trị value cho label có class là text-primary
+        $('.text-primary').text(value);
+        // Gán giá trị value cho toàn bộ label
+        //$('label').text(value);
+    });
+</script>
+
+</html>
