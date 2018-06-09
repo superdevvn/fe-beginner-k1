@@ -35,10 +35,15 @@
             //a.selectable("disable");
             $("#btn1").click(function () {
                 console.log(sl.selectable("instance").selectees);
-                for (var i = 0; i < sl.selectable("instance").selectees.length; i++) {
-                    var selectee = sl.selectable("instance").selectees[i];
-                    if ($(selectee).hasClass('ui-selected')) console.log($(selectee).text());
-                }
+                // for (var i = 0; i < sl.selectable("instance").selectees.length; i++) {
+                //     var selectee = sl.selectable("instance").selectees[i];
+                //     if ($(selectee).hasClass('ui-selected')) console.log($(selectee).text());
+                // }
+                sl.selectable("instance").selectees.filter('.ui-selected').each(function(){
+                    console.log($(this).text());
+                    console.log($(this).data("id"));
+                });
+                //console.log(sl.selectable("instance").selectees.filter('.ui-selected').text());
 
                 // sl.selectable("instance").selectees.forEach(function (selectee) {
                 //     if($(selectee).hasClass('ui-selected')) console.log($(selectee).text());
