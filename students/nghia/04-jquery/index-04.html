@@ -21,8 +21,8 @@
 
         <button id="btn1" class="btn btn-warning" data-a="123" data-b="abc">Click Me</button>
         <button id="btn2" class="btn btn-info">Add Button</button>
-        <button id="btn3" class="btn btn-outline-primary">Primary</button>
-        <button id="btn4" class="btn btn-outline-warning">Warning</button>
+        <button id="btn3" data-bt="Button 3" class="btn btn-outline-primary">Primary</button>
+        <button id="btn4" data-bt="Button 4" class="btn btn-outline-warning">Warning</button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -66,9 +66,8 @@
     });
 
     function test(){
-        alert('Clicked');
+        alert('Clicked ' + $(this).data('bt'));
     }
-
     $('#btn3').click(test);
     $('#btn4').click(test);
 </script>
