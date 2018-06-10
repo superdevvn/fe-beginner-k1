@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="./node_modules/jqueryui/jquery-ui.min.css" rel="stylesheet">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/jqueryui/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $("#group1").droppable({
+                greedy: true,
+                hoverClass: "drop-hover",
+                drop: function (event, ui) {
+                    var info = $(ui.draggable).data("info");
+                    var obj = JSON.parse(info);
+                    console.log(obj);
+                }
+            });
+            $("#group2").droppable({
+                hoverClass: "drop-hover",
+                drop: function (event, ui) {
+                    var info = $(ui.draggable).data("info");
+                    var obj = JSON.parse(info);
+                    console.log(obj);
+                }
+            });
+
+            $("#btn1").click(function () {
+                // if($('.user').length > 0) $('.user').draggable('destroy');
+                // $('body #div2').append('<div class="user"></div>');
+                // $('.user').draggable();
+
+                var students = [{
+                    firstname: 'Nghĩa',
+                    lastname: 'Trần',
+                    age: '20'
+                }, {
+                    'Họ': 'Huỳnh',
+                    'Tên': 'Dũng'
+                }, {
+                    'a': 'Trần',
+                    'b': 'Dũng'
+                }];
+                $('.user').remove();
+                students.forEach(function (student, index) {
+                    var info = JSON.stringify(student);
+                    $('body #div2').append('<div class="user"></div>');
+                    $('body #div2 .user:nth-child(' + (index + 1) + ')').data("info", info);
+                });
+                $('.user').draggable();
+            });
+        });
+    </script>
+</head>
+<style>
+    #group1 {
+        height: 100px;
+        width: 100px;
+        background-color: coral;
+        margin: 5px;
+    }
+
+    #group2 {
+        height: 100px;
+        width: 100px;
+        background-color: cadetblue;
+        margin: 5px;
+    }
+
+    .user {
+        height: 50px;
+        width: 50px;
+        background-color: aqua;
+        margin: 5px;
+    }
+
+    .drop-hover {
+        background-color: bisque !important;
+    }
+</style>
+
+<body>
+    <button id="btn1">Add User</button>
+    <div id="div1" style="display:flex">
+        <div id="group1">
+            Drop here
+        </div>
+
+        <div id="group2">
+            Drop here
+        </div>
+    </div>
+    <div id="div2" style="display:flex">
+
+    </div>
+</body>
+
+</html>
