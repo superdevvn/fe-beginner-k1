@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div >
+                <input id="Input1">
+                <select id="Select1">
+                    <option value="1">dev1</option>
+                    <option value="2">dev2</option>
+                    <option value="3">dev3</option>
+                </select>
+                <button id="Button1">Button 1</button>           
+        </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+$('#Button1').click(function(){
+    
+    var value = $('#Select1 option:selected').text();
+    var value2 = $('#Select1').val();
+    alert(value +"--"+ value2);
+    $('#Input1').text(value);
+})
+
+</script>
+</html>
