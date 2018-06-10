@@ -8,7 +8,6 @@
     <title>SuperDev</title>
     <link rel="shortcut icon" type="image/png" href="./logo.png" />
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -49,53 +48,48 @@
         </div>
     </nav>
     <div class="row p-2 mr-0 ml-0">
-        <div class="col-md-4 offset-4">
-            <span>Mã vai trò</span>
-            <input id="roleCode" class="form-control">
-        </div>
-        <div class="col-md-4 offset-4">
-            <span>Tên vai trò</span>
-            <input id="roleName" class="form-control">
-        </div>
-        <div class="col-md-4 offset-4">
-            <span>Ghi chú</span>
-            <textarea id="roleDescription" class="form-control"></textarea>
-        </div>
-        <div class="col-md-4 offset-4 mt-2">
-            <button id="btnCancel" class="btn btn-secondary btn-sm float-right">
-                <i class="fa fa-times"></i> Hủy bỏ</button>
-            <button id="btnSave" class="btn btn-primary btn-sm float-right mr-2">
-                <i class="fa fa-floppy-o"></i> Lưu</button>
-        </div>
+        <table class="table table-sm table-bordered table-striped table-hover">
+            <colgroup>
+                <col style="width: 150px">
+                <col style="width: 250px">
+                <col>
+            </colgroup>
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
     </div>
 </body>
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script>
-    $('#btnSave').click(function () {
-        var role = {
-            //code: $('#roleCode').val(),
-            Name: $('#roleName').val(),
-            Description: $('#roleDescription').val()
-        }
-
+    $(function () {
         $.ajax({
-            url: "http://103.232.121.69:5201/api/saveRole",
+            url: "http://103.232.121.69:5201/api/getRoles",
             type: "POST",
             dataType: "json",
-            data: JSON.stringify(role),
+            data: {},
             headers: {
                 "Accept": "application/json, text/plain, /",
                 "Auth-SuperDev": "T7g4AXn3TCQL77zI8QDi16sORDXScffXXgnQ/mE5P38CESS5LXagKECtX5xw0cD+",
                 "Content-Type": "application/json; charset=utf-8"
             },
             success: function (res) {
-                console.log(res);
+                res.forEach(row => {
+                    $('#tableBody').append(`<tr>
+                    <td>${row.Id}</td>
+                    <td>${row.Name}</td>
+                    <td>${row.Description}</td>
+                    </tr>`);
+                });
             }
         });
-    });
-    $('#btnCancel').click(function () {
-        window.location.href = "./menu.html";
     });
 </script>
 
