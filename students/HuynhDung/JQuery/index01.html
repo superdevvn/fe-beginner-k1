@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div >
+            <input id="Input1" class="form-control form-control-sm">
+            <button id="Button1" class="btn btn-sm btn-primary">Button 1</button>           
+    </div>
+<br>
+
+    <div >
+            <input  id="Input2" class="form-control form-control-sm">
+            <button id="Button2" class="btn btn-sm btn-primary">Button 2</button>           
+    </div>
+    <br>
+
+    <div >
+           <labe class="t_label">Label 1</label>
+           <label class="t_label">Label 2</label>
+           <label class="t_label">Label 3</label>          
+           <label class="t_label">Label 4</label>
+           <label class="t_label">Label 5</label>
+           <label class="t_label">Label 6</label>
+    </div>
+  
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+$('#Button1').click(function()
+{
+    //GetText -> text();
+    //setText -> text('value');
+var value = $('#Input1').val();
+$('.t_label').text(value);
+});
+</script>
+</html>
