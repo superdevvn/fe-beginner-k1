@@ -51,6 +51,7 @@
         <table class="table table-sm table-bordered table-striped table-hover">
             <colgroup>
                 <col style="width: 150px">
+                <col style="width: 150px">
                 <col style="width: 250px">
                 <col style="width: 150px">
                 <col style="width: 250px">
@@ -58,6 +59,7 @@
             </colgroup>
             <thead class="thead-dark">
                 <tr>
+                    <th>Action</th>
                     <th>Code</th>
                     <th>ProvinceName</th>
                     <th>DistrictID</th>
@@ -84,14 +86,24 @@
             },
             data: JSON.stringify({ token: 'TokenTest' }),
             success: function (res) {
-                res.data.forEach(row => {
+                res.data.forEach((row,index) => {
                     $('#tableBody').append(`<tr>
+                    <td><button data-index="${index}" class="btn btn-sm btn-primary edit">Edit</button>
+                        <button class="btn btn-sm btn-danger delete">Delete</button></td>
                     <td>${row.Code}</td>
                     <td>${row.ProvinceName}</td>
                     <td>${row.DistrictID}</td>
                     <td>${row.DistrictName}</td>
                     <td>${row.Description}</td>
                     </tr>`);
+                });
+
+                $('.edit').click(function(){
+                    var index = $(this).data('index');
+                    console.log(res.data[index]);
+                });
+                $('.delete').click(function(){
+                    $(this).parent().parent().remove();
                 });
             }
         });
