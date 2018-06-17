@@ -530,6 +530,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button id="btnSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -564,6 +565,7 @@
             $(this).addClass('sorting');
         }
     });
+    var td2, td3, td4, td5;
     $('#tableRole tbody tr td i.fa.fa-pencil').click(function () {
         //console.log($(this).parent().parent().html());
 
@@ -572,7 +574,23 @@
         console.log($(this).parent().parent().find('td:nth-child(3)').html());
         console.log($(this).parent().parent().find('td:nth-child(4)').html());
         console.log($(this).parent().parent().find('td:nth-child(5)').html());
+        // Gán giá trị
+        td2 = $(this).parent().parent().find('td:nth-child(2)');
+        td3 = $(this).parent().parent().find('td:nth-child(3)');
+        td4 = $(this).parent().parent().find('td:nth-child(4)');
+        td5 = $(this).parent().parent().find('td:nth-child(5)');
+        $('#ipt1').val(td2.html());
+        $('#ipt2').val(td3.html());
+        $('#ipt3').val(td4.html());
+        $('#ipt4').val(td5.html());
         $('#modalRole').modal('show');
+    });
+    $('#btnSave').click(function(){
+        td2.html($('#ipt1').val());
+        td3.html($('#ipt2').val());
+        td4.html($('#ipt3').val());
+        td5.html($('#ipt4').val());
+        $('#modalRole').modal('hide');
     });
 </script>
 
