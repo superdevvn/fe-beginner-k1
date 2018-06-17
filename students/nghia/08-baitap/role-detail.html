@@ -370,7 +370,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <button class="btn btn-primary">Save</button>
+                    <button id="btnSave" class="btn btn-primary">Save</button>
                     <button class="btn btn-default">Cancel</button>
                 </div>
             </div>
@@ -381,38 +381,8 @@
     <!-- /#wrapper -->
 
     <!-- Modal -->
-    <div id="modalRole" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <input class="form-control" id="ipt1">
-                        </div>
-                        <div class="col-md-3">
-                            <input class="form-control" id="ipt2">
-                        </div>
-                        <div class="col-md-3">
-                            <input class="form-control" id="ipt3">
-                        </div>
-                        <div class="col-md-3">
-                            <input class="form-control" id="ipt4">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id="btnSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
+    <div id="notify-success" style="display:none;background-color:aqua;position: fixed;width: 100px;height: 50px;top:20px;right: 20px;z-index: 10000">
+        Save Success
     </div>
 
     <!-- jQuery -->
@@ -430,6 +400,13 @@
 </body>
 
 <script>
+    $('#btnSave').click(function () {
+        console.log('AAA');
+        $('#notify-success').fadeIn();
+        setTimeout(function () {
+            $('#notify-success').fadeOut();
+        }, 3000);
+    });
 </script>
 
 </html>
