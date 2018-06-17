@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery 3</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            <form class="form-control m-2">
+                <label>Full Name: </label>
+                <input class="form-control" type="text" id="iptName">
+                <label>Birthday: </label>
+                <input class="form-control" type="date" id="iptDate">
+                <label>Sex: </label>
+                <select class="form-control" id="sltSex">
+                    <option value="1">Man</option>
+                    <option value="2">Woman</option>
+                    <option value="3">Other</option>
+                </select>
+
+
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <form id="Reform" class="form-control m-2">
+                <label>Full Name: </label>
+                <input class="form-control" type="text" id="iptReName" disabled="disabled">
+                <label>Birthday: </label>
+                <input class="form-control" type="text" id="iptReDate" disabled="disabled">
+                <label>Sex: </label>
+                <input class="form-control" type="text" id="iptReSex" disabled="disabled">
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="btnSubmit" class="form-control btn btn-outline-danger mt-2">Submit</button>
+            <button id="btnHide" class="form-control btn btn-outline-danger mt-2">Hide Form</button>
+            <button id="btnShow" class="form-control btn btn-outline-danger mt-2">Show Form</button>
+            <button id="btnNew" class="form-control btn btn-outline-danger mt-2">New Button</button>
+        </div>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $('#btnSubmit').click(function () {
+        var name = $('#iptName').val();
+        var date = $('#iptDate').val();
+        var sex = $('#sltSex option:selected').text();
+        // console.log(name);
+        // console.log(date);
+        // console.log(sex);
+        $('#iptReName').val(name);
+        $('#iptReDate').val(date);
+        $('#iptReSex').val(sex);
+       $('#Reform').css('background-color','green');
+       $('#Reform').css('color','white');
+    });
+    $('#btnHide').click(function(){
+        $('form').hide(1000);
+    });
+    $('#btnShow').click(function(){
+        $('form').show(500);
+    });
+    var index = 0;
+    $('#btnNew').click(function () {
+        index++;
+        $('body').append(`<button data-index=${index} class="form-control btn btn-outline-dark mt-2">Button</button>`)
+        $('.btn.btn-outline-dark').off('click');
+        $('.btn.btn-outline-dark').click(function () {
+            alert("Button " + $(this).data('index'));
+        });
+    });
+</script>
+
+</html>

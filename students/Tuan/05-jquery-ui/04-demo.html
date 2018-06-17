@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Sortable - Default functionality</title>
+    <link rel="stylesheet" href="./node_modules/jqueryui/jquery-ui.min.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/jqueryui/jquery-ui.min.js"></script>
+
+</head>
+<style>
+    #group1 {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+    }
+
+    #group2 {
+        width: 100px;
+        height: 100px;
+        background-color: cadetblue;
+    }
+
+    .user {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        margin: 2px;
+    }
+</style>
+<script>
+    $(function () {
+        $('#group1').droppable({
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+
+            }
+        });
+        $('#group2').droppable({
+            hoverClass: "drop-hover",
+            drop: function (event, ui) {
+
+            }
+        });
+        $('#btn1').click(function () {
+            $('body').append(`<div class="user"></div>`);
+            $('.user').draggable();
+        })
+    });
+</script>
+</head>
+
+<body>
+    <button id="btn1"></button>
+    <div id="div1" style="display: flex">
+        <div id="group1" class="ui-widget-content">
+            <p>Drag 1</p>
+        </div>
+
+        <div id="group2" class="ui-widget-header">
+            <p>Drop here</p>
+        </div>
+    </div>
+</body>
+
+</html>

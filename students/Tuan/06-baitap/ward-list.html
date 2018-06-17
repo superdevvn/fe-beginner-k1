@@ -1,0 +1,150 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Wards</title>
+    <link rel="shortcut icon" href="./image/logo.png">
+    <!-- bootstrap.min.css là nó sẽ bỏ đi những ký tự khoảng trắng ,còn không có .min thì sẽ là 1 đoạn code có khoảng trắng :D -->
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://www.facebook.com/minhtuanIT1518" target="_blank">
+            <img src="./image/logo.png" width="30px;" height="30px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        System
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./new-role.html">New Role</a>
+                        <a class="dropdown-item" href="./list-district.html">List Districts</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="row p-2 mr-0 ml-0">
+        <div class="col-md-4">
+            <select id="selectDistrict" class="form-control">
+
+            </select>
+        </div>
+        <table class="table table-sm table-bordered table-striped table-hover">
+            <colgroup>
+                <col style="width: 150px">
+                <col style="width: 250px">
+                <col style="width: 150px">
+                <col style="width: 250px">
+                <col>
+            </colgroup>
+            <thead class="thead-dark">
+                <tr>
+                    <th>DistrictID</th>
+                    <th>DistrictCode</th>
+                    <th>WardCode</th>
+                    <th>WardName</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+</body>
+<!-- Jquery -->
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Jquery-UI -->
+<script src="./node_modules/jqueryui/jquery-ui.min.js"></script>
+<!-- <script>
+    $('#btnSave').click(function () {
+        var code = $('#CodeRole').val();
+        var name = $('#NameRole').val();
+        var decription = $('#Decription').val();
+        // console.log(code, name,decription);
+        alert("CodeRole: " + code + " " + "NameRole: " + name + " " + "Decription: " + decription);
+    });
+</script> -->
+<script>
+        $(function () {
+            var districtID = undefined;
+    
+            function loadDistricts() {
+                $.ajax({
+                    url: "http://api.serverapi.host/api/v1/apiv3/GetDistricts",
+                    type: "POST",
+                    dataType: "json",
+                    headers: {
+                        "Accept": "application/json, text/plain, */*",
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+                    data: JSON.stringify({ token: 'TokenTest' }),
+                    success: function (res) {
+                        console.log(res.data);
+                        res.data.forEach(row => {
+                            $('#selectDistrict').append(`<option value="${row.DistrictID}">${row.DistrictName}</option>`);
+                        });
+                    }
+                });
+            }
+    
+            function loadWards() {
+                $.ajax({
+                    url: "http://api.serverapi.host/api/v1/apiv3/GetWards",
+                    type: "POST",
+                    dataType: "json",
+                    headers: {
+                        "Accept": "application/json, text/plain, */*",
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+                    data: JSON.stringify({ token: 'TokenTest', DistrictID: +districtID }),
+                    success: function (res) {
+                        console.log(res.data);
+                        $('#tableBody').empty();
+                        res.data.Wards.forEach(row => {
+                            $('#tableBody').append(`<tr>
+                            <td>${row.DistrictID}</td>
+                            <td>${row.DistrictCode}</td>
+                            <td>${row.WardCode}</td>
+                            <td>${row.WardName}</td>
+                            </tr>`);
+                        });
+                    }
+                });
+            };
+            loadDistricts();
+    
+            $('#selectDistrict').change(function () {
+                districtID = $('#selectDistrict').val();
+                console.log(districtID);
+                loadWards();
+            });
+        });
+    </script>
+
+</html>

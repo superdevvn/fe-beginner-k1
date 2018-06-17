@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Roles</title>
+    <link rel="shortcut icon" href="./image/logo.png">
+    <!-- bootstrap.min.css là nó sẽ bỏ đi những ký tự khoảng trắng ,còn không có .min thì sẽ là 1 đoạn code có khoảng trắng :D -->
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://www.facebook.com/minhtuanIT1518" target="_blank">
+            <img src="./image/logo.png" width="30px;" height="30px" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        System
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./new-role.html">New Role</a>
+                        <a class="dropdown-item" href="./list-district.html">List Districts</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="row p-2 mr-0 ml-0">
+            <table class="table table-sm table-bordered table-striped table-hover">
+                    <colgroup>
+                        <col style="width: 150px">
+                        <col style="width: 150px">
+                        <col style="width: 250px">
+                        <col style="width: 150px">
+                        <col style="width: 250px">
+                        <col>
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+    </div>
+</body>
+<!-- Jquery -->
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Jquery-UI -->
+<script src="./node_modules/jqueryui/jquery-ui.min.js"></script>
+<script>
+        $(function () {
+            $.ajax({
+                url: "http://103.232.121.69:5201/api/getRoles",
+                type: "POST",
+                dataType: "json",
+                data: {},
+                headers: {
+                    "Accept": "application/json, text/plain, /",
+                    "Auth-SuperDev": "T7g4AXn3TCQL77zI8QDi16sORDXScffXXgnQ/mE5P38CESS5LXagKECtX5xw0cD+",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                success: function (res) {
+                    res.forEach(row => {
+                        $('#tableBody').append(`<tr>
+                        <td>${row.Id}</td>
+                        <td>${row.Name}</td>
+                        <td>${row.Description}</td>
+                        </tr>`);
+                    });
+                }
+            });
+        });
+    </script>
+
+</html>
