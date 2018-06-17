@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SelecTable</title>
+    <link rel="stylesheet" href="./node_modules/jqueryui/jquery-ui.min.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/jqueryui/jquery-ui.min.js"></script>
+
+</head>
+<style>
+    #feedback {
+        font-size: 1.4em;
+    }
+
+    #selectable .ui-selecting {
+        background: #FECA40;
+    }
+
+    #selectable .ui-selected {
+        background: #F39814;
+        color: white;
+    }
+
+    #selectable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 60%;
+    }
+
+    #selectable li {
+        margin: 3px;
+        padding: 0.4em;
+        font-size: 1.4em;
+        height: 18px;
+    }
+</style>
+<script>
+    $(function () {
+        //chọn những class nào t1 mới bấm được
+        // $("#selectable").selectable({
+        //     filter: ".t1"
+        // });
+        //------------------------------------------------
+        //những class có tên t1 thì k bấm được
+        // $("#selectable").selectable({
+        //     cancel: ".t1"
+        // })
+        //----------------------------------------
+        //dùng method
+        // var a = $("#selectable").selectable({
+        //     // tolerance : "touch"
+        // });
+        // a.selectable("disable");
+        //-----------------------------------
+        var sl = $("#selectable").selectable({
+                //cancel: ".t1",
+                //filter: ".t1"
+                //tolerance: "fit",
+                seleting: function (event, ui) {
+
+                },
+                selected: function (event, ui) {
+                    // console.log(event);
+                    // console.log(ui);
+                    console.log($(ui.selected).text());
+                    console.log($(ui.selected).data("id"));
+                },
+                unselected: function (event, ui) {
+                    console.log($(ui.unselected).text());
+                    console.log($(ui.unselected).data("id"));
+                }
+            });
+
+            //a.selectable("disable");
+            $("#btn1").click(function () {
+                console.log(sl.selectable("instance").selectees);
+                for (var i = 0; i < sl.selectable("instance").selectees.length; i++) {
+                    var selectee = sl.selectable("instance").selectees[i];
+                    if ($(selectee).hasClass('ui-selected')) console.log($(selectee).text());
+                }
+
+                // sl.selectable("instance").selectees.forEach(function (selectee) {
+                //     if($(selectee).hasClass('ui-selected')) console.log($(selectee).text());
+                // });
+            });
+
+            $("#btn2").click(function () {
+                console.log(sl.selectable("widget"));
+                var selector = sl.selectable("widget");
+                $(selector).css('font-size', '20px');
+            });
+
+            $("#btn3").click(function () {
+                sl.selectable("refresh");
+            });
+    });
+</script>
+
+<body>
+    <button id="btn1">Get instance</button>
+    <button id="btn2">Widget</button>
+    <ol id="selectable">
+        <li class="ui-widget-content t1">Item 1</li>
+        <li class="ui-widget-content">Item 2</li>
+        <li class="ui-widget-content">Item 3</li>
+        <li class="ui-widget-content">Item 4</li>
+        <li class="ui-widget-content">Item 5</li>
+        <li class="ui-widget-content">Item 6</li>
+        <li class="ui-widget-content">Item 7</li>
+    </ol>
+</body>
+
+</html>
